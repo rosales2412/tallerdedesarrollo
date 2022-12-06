@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Solution</title>
+    <link rel="icon" href="Proyectonuevo.ico">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link  href =" https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap " rel ="estilos">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <!-- Hover -->   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" integrity="sha512-SJw7jzjMYJhsEnN/BuxTWXkezA2cRanuB8TdCNMXFJjxG9ZGSKOX5P3j03H6kdMxalKHZ7vlBMB4CagFP/de0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- AOS -->   
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .nav-link:hover{
+            background-color: white;
+            box-shadow: 1px 1px 10px 0 white;
+        }
+
+
+
+        .carrosel {
+            -webkit-perspective: 250px;
+            -moz-perspective: 250px;
+            width: 350px;
+            height: 180px;
+            top: 50px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        @-webkit-keyframes efeitoCarrosel {
+            from {
+                -webkit-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+                -moz-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+                z-index: 10;
+                opacity: 1
+            }
+
+            50% {
+                z-index: -10;
+            }
+
+            to {
+                -webkit-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+                -moz-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+                z-index: 10;
+                opacity: 1
+            }
+        }
+
+        @-moz-keyframes efeitoCarrosel {
+            from {
+                -moz-transform: rotateY(360deg) translateZ(130px) rotateY(-360deg);
+                z-index: 10;
+                opacity: 1
+            }
+
+            50% {
+                z-index: -10;
+            }
+
+            to {
+                -moz-transform: rotateY(0deg) translateZ(130px) rotateY(0deg);
+                z-index: 10;
+                opacity: 1
+            }
+        }
+
+        .caixa__card {
+            width: 90px;
+            height: 100px;
+            background-color: #442222;
+            position: absolute;
+            display: flex;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
+            top: 35px;
+            left: 125px;
+            font-size: 9px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+            text-align: center;
+            -webkit-animation-name: efeitoCarrosel;
+            -moz-animation-name: efeitoCarrosel;
+            -webkit-animation-duration: 10s;
+            -moz-animation-duration: 10s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+        }
+
+        .caixa__card:hover {
+            border: solid #4466cc 3px;
+            box-shadow: 0px 0px 10px #4466cc;
+        }
+
+        .caixa__card.cc__1 {
+            background: linear-gradient(-229deg, #0093E9, #80D0C7);
+            -webkit-animation-delay: -5s;
+            -moz-animation-delay: -5s;
+        }
+
+        .caixa__card.cc__2 {
+
+            background: linear-gradient(-229deg, #00DBDE, #FC00FF);
+            -webkit-animation-delay: -4s;
+            -moz-animation-delay: -4s;
+        }
+
+        .caixa__card.cc__3 {
+
+            background: linear-gradient(-229deg, #50d990, #d4d054);
+            -webkit-animation-delay: -3s;
+            -moz-animation-delay: -3s;
+        }
+
+        .caixa__card.cc__4 {
+            background: linear-gradient(-229deg, #cf91ff, #5782F5);
+            -webkit-animation-delay: -2s;
+            -moz-animation-delay: -2s;
+        }
+
+        .caixa__card.cc__5 {
+            background: linear-gradient(-229deg, #642B73, #C6426E);
+            -webkit-animation-delay: -1s;
+            -moz-animation-delay: -1s;
+        }
+        .container-fluidtext{
+            background-color: rgb(16, 5, 114);
+        }
+
+        .w-26:hover{
+            -webkit-transform:scale(1.05);
+            transform:scale(1.05);
+        }
+        .w-26{
+            overflow:hidden;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container-fluidtext">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid"> 
+                    <a class="navbar-brand" href="#">
+                        <img src="log.webp" alt="Logo" width="130px" class="w-26">
+                        </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                    <ul class="navbar-nav ms-auto mb-4 mb-lg-0" >
+                      <li class="nav-item" style="margin-right: 28px; margin-bottom: 20px;">
+                        <a class="nav-link active btn btn-primary" aria-current="page" href="#inicio" id="navbarDropdown1"  style="background-color: beige; color: black; font-weight: bold; border-radius: 40px; border: none;">INICIO</a>
+                      </li>
+                      <li class="nav-item" style="margin-right: 28px; margin-bottom: 20px;">
+                        <a class="nav-link active active btn btn-primary" href="NOSOTROS.html" id="navbarDropdown2"  style="background-color: beige; color: black; font-weight: bold; border-radius: 40px; border: none;">NOSOTROS</a>
+                      </li>
+                      <li class="nav-item dropdown" style="margin-right: 28px; margin-bottom: 20px;">
+                        <a class="nav-link dropdown-toggle active active btn btn-primary" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: beige; color: black; font-weight: bold; border-radius: 40px; border: none;">
+                          PRODUCTOS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="CONSTRUCTOR.html"  style="max-width: 100%;">APLICACIONES A LA NUBE</a></li>
+                          <li><a class="dropdown-item" href="MIGRACIÓN.html" style="max-width: 100%;">SERVIDORES A LA NUBE</a></li>
+                          <!--<li><hr class="dropdown-divider"></li>-->
+                          <!--<li><a class="dropdown-item" href="#">Something else here</a></li>-->
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown" style="margin-right: 28px; margin-bottom: 20px;">
+                        <a class="nav-link dropdown-toggle active active btn btn-primary" href="#" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: beige; color: black; font-weight: bold; border-radius: 40px; border: none;">
+                          SERVICIOS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="DISEÑO.html">DISEÑO WEB</a></li>
+                          <li><a class="dropdown-item" href="DESARROLLO.html">DESARROLLO MÓVIL</a></li>
+                          <!--<li><hr class="dropdown-divider"></li>-->
+                          <!--<li><a class="dropdown-item" href="#">Something else here</a></li>-->
+                        </ul>
+                      </li>
+                      <li class="nav-item" style="margin-right: 28px; margin-bottom: 20px;">
+                        <a class="nav-link active active btn btn-primary" href="#contacto" id="navbarDropdown5"  role="button" style="background-color: beige; color: black; font-weight: bold; border-radius: 40px; border: none;">CONTACTO</a>
+                      </li>
+                     <!--<li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>--> 
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+         </div>
+    </div>
+        <!-------------------------------------------------->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center pt-5" id="inicio">
+                    <h1 style="color: rgb(3, 2, 63);">DISEÑO DE PÁGINAS Y APLICACIONES WEB</h1>
+                          
+                </div>
+            </div>
+        </div>
+    <!-------------------------------------------------->
+    <div class="container-fluid my-1 py-1 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 py-5"> 
+                    <h2 style="color: rgb(2, 2, 2);">DISEÑO WEB</h2>
+                    <br>
+                    <img src="diseño.webp" alt="apli" class="w-26" style="max-width: 100%;">
+                <p style="color:black;font-family: Arial, Helvetica, sans-serif; text-align: left;">Nos dedicamos
+                     a crear páginas web para tu empresa,
+                    nos esforzamos en hacer tu página web algo mejor, todas nuestras webs se adaptan
+                     a dispositivos móviles.
+                      Somos expertos en html5, css y javascript.</p>
+                      <a href="DISEÑO.html" class="btn btn-primary">Más información</a>
+            </div>
+                <div class="col-12 col-md-6 py-5" >
+                    <h2 style="color: rgb(0, 0, 0);">DESARROLLO MÓVIL</h2>
+                    <br>
+                    <img src="movil.webp" alt="apli" class="w-26" style="max-width: 100%;">
+                    <p style="color:black;font-family: Arial, Helvetica, sans-serif; text-align: left;">Somos expertos
+                         en desarrollar aplicaciones para móviles con 
+                        tecnologías backend. Desarrollamos en multiplataforma para Web, iOS, Android y 
+                        Windows.</p>
+                        <a href="DESARROLLO.html" class="btn btn-primary">Más información</a>
+                </div>
+                
+            </div>
+        
+        </div>
+    </div>
+    <!-------------------------------------------------->
+    <div class="container">
+        <div class="row bg-info">
+            <div class="col-12 text-center pt-5">
+                <h2 style="font-size: 25px;">Somos una empresa capaz de ayudarte y traer tu sueño
+                     a la realidad, a travéz de la tecnología, instituciones como la Universidad
+                      De La Salle Bajio nos respaldan.</h2>
+                      <br>
+                      <br>
+                      
+            </div>
+        </div>
+    </div>
+
+<!-------------------------------------------------->
+<div class="container-fluid my-5 py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 style="color: rgb(3, 2, 63);">NUESTROS PRODUCTOS</h2>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="container col-12 col-md-6">
+                <div class="card shadow text-center" data-aos="flip-left">
+                  <div class="container">
+                    <img src="app.webp" alt="apli" class="w-26" style="max-width: 100%;">
+                  </div>
+                    <div class="card-body text-center">
+                      <h5 class="card-title text-center;" style="color: black; text-align: center;">MIGRACION DE APLICACIONES A LA NUBE</h5>
+                      <p class="card-text">Nuestra misión es ofrecer un software que sea intuitivo,
+                         tenga todas las funciones, esté totalmente integrado, se actualice con facilidad
+                          y que funcione con suavidad para cualquier empresa y cualquier usuario.</p>
+                      <a href="CONSTRUCTOR.html" class="btn btn-primary" style="justify-content: center;">Más información</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container col-12 col-md-6 ">
+                <div class="card shadow text-center" data-aos="flip-left">
+                    <div class="container">
+                        <img src="server.webp" alt="apli" class="w-26" style="max-width: 100%;">
+                    </div>
+                    <div class="card-body text-center">
+                      <h5 class="card-title text-center;" style="color: black; text-align: center;">MIGRACIÓN DE SERVIDORES A LA NUBE</h5>
+                      <p class="card-text">Traslada tus servidores de aplicaciones a la nube pública.
+                         De esta manera es posible preparar las aplicaciones para conseguir una mayor 
+                         resistencia y afrontar los retos de negocios futuros y asegurar el éxito.</p>
+                      <a href="MIGRACIÓN.html" class="btn btn-primary" style="justify-content: center;">Más información</a>
+                      
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>
+<!--------------------------------------------->
+
+<div class="container-fluid my-5  bg-light" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>MÁS PRODUCTOS</h2>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row" id="dominio" style="gap: 10px; justify-content: center;">
+        </div>
+    </div>
+</div>
+
+<!--------------------------------------------->
+<div class="container-fluid my-5 py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 style="color: rgb(3, 2, 63);">SOMOS EXPERTOS EN:</h2>
+            </div>
+        </div>
+        <br>
+        <div class="conteudo" style="width: 100%;">
+            <div class="carrosel">
+                <div class="caixa__card cc__1" style="color: white; font-size: 13px;">HTML</div>
+                <div class="caixa__card cc__2" style="color: white; font-size: 13px;">CSS</div>
+                <div class="caixa__card cc__3" style="color: white; font-size: 13px;">JAVASCRIPT</div>
+                <div class="caixa__card cc__4" style="color: white; font-size: 13px;">BOOTSTRAP</div>
+                <div class="caixa__card cc__5" style="color: white; font-size: 13px;">NODE.JS</div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<!--------------------------------------------->
+<div class="container-fluid text-center">
+    <div class="row p-5 bg-info">
+        <h4>DISEÑAMOS Y DESARROLLAMOS WEB APPS PARA LAS SIGUIENTES PLATAFORMAS</h4>
+       
+        <div class="container col-xs-12 col-md-6 text-center" >
+            <br>
+            <br>
+            <div style="display: inline-block; margin: 0 30px;"><img src="android-logo.png" alt="android" class="w-30"> <h6>ANDROID</h6> </div>
+            <div style="display: inline-block; margin: 0 30px;"><img src="apple-black-logo.png" alt="apple" class="w-45"><h6>iOS/MAC</h6></div>
+            <div style="display: inline-block; margin: 0 30px;"><img src="windows(1).png" alt="windows" class="w-45"><h6>WINDOWS</h6></div>
+            <div style="display: inline-block; margin: 0 30px;"><img src="world-wide-web.png" alt="web" class="w-45"><h6>WEB</h6></div>
+        
+          
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<!--------------------------------------------->
+<div class="container-fluid py-5 bg-light" id="contacto">
+    <div class="container col-md-20 py-5" data-aos="fade-up" style="background-color: #80D0C7;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center" style="color: rgb(3, 2, 63);">CONTÁCTANOS</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3">
+                <form name="formcontacto" id="forma-contacto" action="?seccion=contacto&accion=envia" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Si le interesa alguno de nuestros productos y/o servicios, 
+                                responda el siguiente formulario y posteriormente nos comunicaremos 
+                                con usted para brindarle toda la información que solicite.</p>
+                            <p class="h6">
+                                <a class="text-black text-decoration-none" href="https://www.google.com/maps/place/Ayuntamiento+de+Coscomatepec/@19.0727246,-97.0507171,16z/data=!4m13!1m7!3m6!1s0x85c4de3339365143:0x708a0474fa7751!2sCoscomatepec,+Ver.!3b1!8m2!3d19.0683148!4d-97.0471556!3m4!1s0x85c4de348efd29e5:0xec3079c54d18ffbc!8m2!3d19.0731054!4d-97.0475873" target="_blank">O visite nuestras oficinas con cita previa en:  C. 1-Bis Amez Y Arguelles S/N, Coscomatepec de Bravo, Centro, 94140 Coscomatepec, Ver.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 py-2"><input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required></div>
+                        <div class="col-6 py-2"><input type="tel" name="telefono" id="telefono" class="form-control" placeholder="Tel&eacute;fono" required></div>
+                        <div class="col-12 py-2"><input type="email" name="correo" id="correo" class="form-control" placeholder="Correo electr&oacute;nico" required></div>
+                        <div class="col-12 py-2"><textarea name="comentario" id="comentario" class="form-control" placeholder="Comentario" required></textarea> </div>
+                        <div class="col-12 py-2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <input type="submit" value="Enviar" class="btn btn-primary">
+                            <input type="reset" value="Limpar Campos" class="btn btn-primary">
+                        </div>
+                        </div>
+                    </div>
+                    </fieldset>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------->
+
+    <div class="conatainer-fluid text-center">
+        <div class="row p-5" style="background-color: rgb(16, 5, 114);">
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <p class="h5 mb-3 btn" style="color: white; font-size: 25px;">UBICACIÓN</p>
+                <p class="mb-3 h6" style="color: rgb(255, 255, 255);">OFICINAS EN COSCOMATEPEC, VERACRUZ.</p>
+                <p class="h6" style="color: rgb(255, 255, 255);">
+                    <img src="ubi.webp" alt="ubi" class="w-45">
+                    <a class="text-white text-decoration-none" href="https://www.google.com/maps/place/Ayuntamiento+de+Coscomatepec/@19.0727246,-97.0507171,16z/data=!4m13!1m7!3m6!1s0x85c4de3339365143:0x708a0474fa7751!2sCoscomatepec,+Ver.!3b1!8m2!3d19.0683148!4d-97.0471556!3m4!1s0x85c4de348efd29e5:0xec3079c54d18ffbc!8m2!3d19.0731054!4d-97.0475873" target="_blank">C. 1-Bis Amez Y Arguelles S/N, Coscomatepec de Bravo, Centro, 94140 Coscomatepec, Ver.</a>
+                </p>
+            </div>
+            
+            <div class="col-xs-12 col-md-6 col-lg-4 ">
+                <p class="h5 mb-8 btn" style="color: white; font-size: 25px;">TELÉFONOS DE CONTACTO</p>
+                <div class="mb-2">
+                    <p class="h6" style="color: rgb(255, 255, 255);">Ventas Coscomatepec, Ver.: 273-1234-567</p>
+                </div>
+                <div class="mb-8">
+                    <p class="h6" style="color: rgb(255, 255, 255);">Asistencia Técnica: 273-1234-567</p>
+                </div>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <div class="mb-2">
+                    <p class="h5 btn" style="color: white;"> <i class="bi bi-shield-lock-fill"></i>
+                        AVISO DE PRIVACIDAD</p>
+                        <br>
+                        <a class=" h6 btn btn-primary" data-bs-toggle="modal" 
+                        data-bs-target="#exampleModal" style="color: rgb(255, 255, 255);"  >Ver aviso de privacidad</a>
+                </div>
+                <!--<div class="mb-2">
+                    <a class="text-black text-decoration-none" href="#">Ejemplo</a>
+                </div>-->
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4 mb-3">
+                <a href="#" class="ligapiedepagina">
+                    <img src="log.webp" alt="SS" class="w-26">
+                    </a>
+                    <p>&nbsp;</p>
+                    <br>
+                    <br>
+                    <p class="h5 btn" style="color: white;"> <i class="bi bi-hand-thumbs-up-fill "></i>
+                        NUESTRAS REDES</p>
+                        <br>
+                        <P style="text-decoration: underline;">
+                            <a class="text-white text-decoration-none" href="https://instagram.com/rosales_cll" target="_blank">Instagram</a>
+                            &nbsp;
+                            <a class="text-white text-decoration-none" href="https://www.facebook.com/profile.php?id=100013570360236" target="_blank">Facebook</a>
+                            &nbsp;
+                            <a class="text-white text-decoration-none" href="https://www.linkedin.com/in/c%C3%A9sar-rosales-9baab7248" target="_blank">Linkedin</a>
+                        </P>
+            </div>
+            <div class="row my-5 wow animated fadeInUp">
+                <div class="col-12 text-center">
+                    <p style="color: white;"> <span id="Empresa">SS, Soft Solution</span>
+                         |
+                         <span>©</span>
+                          TODOS LOS DERECHOS RESERVADOS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--------------------------------------------->
+<!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Protección de datos personales</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Con fundamento en los artículos 15 y 16 de la Ley Federal de Protección
+           de Datos Personales en Posesión de Particulares hacemos de su conocimiento
+            que SS, Soft Solution, es responsable de recabar sus datos personales,
+             del uso que se le da a los mismos y de su protección. Utilizará sus datos personales,
+              recabados por este medio, con la finalidad de mantener contacto con Usted, atenderle 
+              y establecer la relación comercial necesaria relacionada con los objetivos de esta empresa.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!--------------------------------------------->
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+       AOS.init();
+       
+       var dominio = document.getElementById("dominio");  
+        fetch("productos.json")
+        .then( response => {
+            response.json().then( datos => {
+                datos.forEach( registro => {
+                       
+                    console.log(registro.producto);
+
+                    let columna = document.createElement("div");
+                    columna.className = "col-12 col-md-3 px-6 text-center bg-white shadow";
+
+                    let producto = document.createElement("h6");
+                    producto.className = "text-center";
+                    producto.innerHTML = registro.producto;
+
+                    let imagen = document.createElement("img");
+                    imagen.className = "w-26 text-center mb-3";
+                    imagen.src = registro.imagen;
+
+                    let boton = document.createElement("button");
+                    boton.className = "btn btn-primary hvr-gorw my-3";
+                    boton.innerHTML = "Me interesa";
+
+                    dominio.appendChild(columna);
+                    columna.appendChild(imagen);
+                    columna.appendChild(producto);
+                    columna.appendChild(boton);
+                    /*
+                    let nombre = document.createElement("p");
+                    nombre.textContent = "País:" + registro.CountryName + ", id:" + registro.CapitalName;
+                    paises.appendChild(nombre);
+
+
+                    let imagen = document.createElement("img");
+                    imagen.setAttribute("src","https://countryflagsapi.com/png/" + registro.CountryName);
+                    paises.appendChild(imagen);
+                          */
+                });
+            });
+        }); 
+
+
+   </script>
+</body>
+</html>
